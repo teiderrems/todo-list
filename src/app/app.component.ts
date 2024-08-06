@@ -8,12 +8,13 @@ import { TaskFormComponent } from "./task-form/task-form.component";
 import { FormsModule } from '@angular/forms';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { CapitalizePipe } from "./capitalize.pipe";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NzFormModule,NzButtonModule,NzIconModule, NzCardModule, FormsModule, StatComponent, TaskFormComponent],
+  imports: [RouterOutlet, NzFormModule, NzButtonModule, NzIconModule, NzCardModule, FormsModule, StatComponent, TaskFormComponent, CapitalizePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

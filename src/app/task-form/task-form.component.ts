@@ -5,11 +5,13 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { Task } from '../task-service.service';
+import { HoverDirective } from '../hover.directive';
+import { FocusDirective } from '../focus.directive';
 
 @Component({
   selector: 'app-task-form',
   standalone: true,
-  imports: [FormsModule,NzFormModule,NzCardModule,NzButtonModule,NzIconModule,],
+  imports: [FormsModule,NzFormModule,NzCardModule,NzButtonModule,NzIconModule,HoverDirective,FocusDirective,],
   templateUrl: './task-form.component.html',
   styleUrl: './task-form.component.css'
 })

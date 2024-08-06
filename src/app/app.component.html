@@ -5,7 +5,7 @@
   <div class="flex justify-center top-36 p-4 right-80 left-0 z-0 absolute items-center flex-1">
     <div class="flex-1 grid grid-cols-3 gap-4 mx-1 mt-2 h-full overflow-y-auto">
       @for (task of tasks(); track task.id) {
-      <nz-card [class.line-through]="task.completed" nzTitle="{{task.title}}" class="p-2 shadow-md h-fit rounded-md border">
+      <nz-card [class.line-through]="task.completed" nzTitle="{{task.title | capitalize}}" class="p-2 shadow-md h-fit rounded-md border">
         <p class="truncate">{{task.content}}</p>
         @if (!task.completed) {
           <div class="flex justify-between items-center">

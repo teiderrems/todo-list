@@ -1,11 +1,11 @@
-<div class="w-80 flex-col h-full z-10 fixed right-0 top-36 flex items-center space-y-4 justify-center border-l">
+<div appHover="bg-gray-500" defaultColor="bg-red-500" class="w-80 flex-col h-full z-10 fixed right-0 top-36 flex items-center space-y-4 justify-center border-l">
     <div class="flex flex-col space-y-1 w-3/4">
       <nz-form-label  nzFor="title" nzSpan="6" >Title</nz-form-label>
-      <input nz-input [(ngModel)]="currentTask.title" id="title" class="w-full p-2 h-12 border rounded-md" name="title" />
+      <input nz-input appFocus [(ngModel)]="currentTask.title" id="title" class="w-full p-2 h-12 border rounded-md" name="title" />
     </div>
     <div class="flex flex-col space-y-1 w-3/4">
       <nz-form-label nzSpan="7" nzFor="description">Description</nz-form-label>
-      <textarea nz-input [(ngModel)]="currentTask.content" name="description" class="w-full p-2 h-16 border rounded-md"
+      <textarea appFocus nz-input [(ngModel)]="currentTask.content" name="description" class="w-full p-2 h-16 border rounded-md"
         type="description" id="description"></textarea>
     </div>
     @if (isEdit()) {
