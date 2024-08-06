@@ -41,7 +41,7 @@ updateTask($event: Task) {
   update(task: Task) {
     this.taskService.putTask(task).subscribe(tasks => {
       this.tasks.set(tasks);
-      this.isEdit.update(state=>!state);
+      this.isEdit.update(state=>state?!state:state);
     });
   }
   addTask(task:Task) {
