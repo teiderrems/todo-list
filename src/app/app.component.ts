@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { CapitalizePipe } from "./capitalize.pipe";
+import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 
 
 @Component({
@@ -17,6 +18,46 @@ import { CapitalizePipe } from "./capitalize.pipe";
   imports: [RouterOutlet, NzFormModule, NzButtonModule, NzIconModule, NzCardModule, FormsModule, StatComponent, TaskFormComponent, CapitalizePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
+  animations:[
+    trigger("beforeEnter",[
+      transition(':enter',[animate("3s",keyframes([
+        style({
+          opacity:0,
+          borderColor:'lightgray',
+        }),
+        style({
+          opacity:0.5,
+          borderColor:'gray',
+        }),
+        style({
+          opacity:0.75,
+          borderColor:'lightblue',
+        }),
+        style({
+          opacity:1,
+          borderColor:'blue',
+        }),
+      ]))]),
+      transition(':leave',[animate("1s",keyframes([
+        style({
+          opacity:1,
+          borderColor:'lightgray',
+        }),
+        style({
+          opacity:0.75,
+          borderColor:'gray',
+        }),
+        style({
+          opacity:0.5,
+          borderColor:'lightblue',
+        }),
+        style({
+          opacity:0,
+          borderColor:'blue',
+        }),
+      ]))])
+    ])
+  ]
 })
 export class AppComponent implements OnInit {
 updateTask($event: Task) {
