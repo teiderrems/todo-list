@@ -56,7 +56,7 @@ import { animate, keyframes, style, transition, trigger } from '@angular/animati
           borderColor:'blue',
         }),
       ]))])
-    ])
+    ]),
   ]
 })
 export class AppComponent implements OnInit {

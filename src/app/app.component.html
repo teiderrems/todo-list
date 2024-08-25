@@ -1,9 +1,8 @@
-<div class="flex overflow-hidden flex-col h-screen">
-  <div class=" h-36 border-b fixed right-0 left-0 z-10 top-0 pb-4 bg-blue-300 py-2">
-    <app-stat [completedTask]="completedTask()" [unCompletedTask]="unCompletedTask()" [lengthTask]="taskLength()"/>
-  </div>
-  <div class="flex justify-center top-36 p-4 right-80 left-0 z-0 absolute items-center flex-1">
-    <div class="flex-1 grid grid-cols-3 gap-4 mx-1 mt-2 h-full overflow-y-auto">
+
+<div class="grid grid-cols-12 grid-rows-8 h-screen overflow-hidden">
+  <div class="bg-blue-300 col-span-12 row-span-1 col-start-1 row-start-1"><app-stat [completedTask]="completedTask()" [unCompletedTask]="unCompletedTask()" [lengthTask]="taskLength()"/></div>
+  <div class="col-span-9 row-start-2 row-span-7">
+    <div class="flex-1 grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 m-3 h-full overflow-y-auto">
       @for (task of tasks(); track task.id) {
       <nz-card @beforeEnter [class.line-through]="task.completed" nzTitle="{{task.title | capitalize}}" class="p-2 shadow-md h-fit rounded-md border">
         <p class="truncate">{{task.content}}</p>
@@ -27,6 +26,6 @@
       </nz-card>
       }
     </div>
-    <app-task-form (addTask)="addTask($event)" [isEdit]="isEdit()" (updateTask)="update($event)" [editTask]="currentTask()"/>
   </div>
+  <div class="col-span-3 row-span-7"><app-task-form (addTask)="addTask($event)" [isEdit]="isEdit()" (updateTask)="update($event)" [editTask]="currentTask()"/></div>
 </div>
